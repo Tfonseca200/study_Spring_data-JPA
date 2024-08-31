@@ -35,6 +35,8 @@ public class BookModel implements Serializable {
     private Set<AuthorModel> authors = new HashSet<>();
 
 
+    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
+    private ReviewModel review;
 
 
     public UUID getId() {
@@ -67,5 +69,13 @@ public class BookModel implements Serializable {
 
     public void setAuthors(Set<AuthorModel> authors) {
         this.authors = authors;
+    }
+
+    public ReviewModel getReview() {
+        return review;
+    }
+
+    public void setReview(ReviewModel review) {
+        this.review = review;
     }
 }
