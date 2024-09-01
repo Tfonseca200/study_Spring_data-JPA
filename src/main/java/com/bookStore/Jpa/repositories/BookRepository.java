@@ -16,4 +16,5 @@ public interface BookRepository extends JpaRepository<BookModel, UUID> {
     //exemplo de Querie nativa personalida
     @Query(value = "SELECT * FROM tb_book WHERE publisher_id = :id", nativeQuery = true)
     List<BookModel> findBooksByPublisherId(@Param("id") UUID id);
+
 }
